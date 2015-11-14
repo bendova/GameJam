@@ -22,7 +22,7 @@ namespace GameJam
             {
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
-            m_Interact = CrossPlatformInputManager.GetButtonDown("Interact");
+            m_Interact = CrossPlatformInputManager.GetButton("Interact");
         }
         
         private void FixedUpdate()
