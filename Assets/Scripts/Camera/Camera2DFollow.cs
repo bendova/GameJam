@@ -12,9 +12,11 @@ namespace GameJam
         public float lookAheadMoveThreshold = 0.1f;
 
         private float m_OffsetZ;
+        public float m_OffsetY = 0;
         private Vector3 m_LastTargetPosition;
         private Vector3 m_CurrentVelocity;
         private Vector3 m_LookAheadPos;
+        private Vector3 m_CameraTargetPos;
 
         // Use this for initialization
         private void Start()
@@ -22,6 +24,7 @@ namespace GameJam
             m_LastTargetPosition = target.position;
             m_OffsetZ = (transform.position - target.position).z;
             transform.parent = null;
+            m_CameraTargetPos = new Vector3(0f, m_OffsetY, 0f);
         }
 
 
@@ -35,12 +38,13 @@ namespace GameJam
 
             if (updateLookAheadTarget)
             {
-                m_LookAheadPos = lookAheadFactor*Vector3.right*Mathf.Sign(xMoveDelta);
+                m_LookAheadPos = lookAheadFactor * Vector3.right * Mathf.Sign(xMoveDelta);
             }
             else
             {
                 m_LookAheadPos = Vector3.MoveTowards(m_LookAheadPos, Vector3.zero, Time.deltaTime*lookAheadReturnSpeed);
             }
+            m_LookAheadPos.y = m_OffsetY;
 
             Vector3 aheadTargetPos = target.position + m_LookAheadPos + Vector3.forward*m_OffsetZ;
             Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref m_CurrentVelocity, damping);
