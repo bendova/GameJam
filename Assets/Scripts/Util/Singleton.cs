@@ -76,7 +76,7 @@ namespace  GameJam
         /// </summary>
         public void OnDestroy()
         {
-            applicationIsQuitting = true;
+            //applicationIsQuitting = true;
         }
     }
 }
