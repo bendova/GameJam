@@ -10,6 +10,9 @@ namespace GameJam
 
         private Dialog m_Dialog = null;
 
+        private float m_InputWaitDuration = 0.5f;
+        private float m_InputWaitTimer = 0f;
+
         void Start()
         {
 
@@ -22,11 +25,19 @@ namespace GameJam
                 return;
             }
 
+            if (m_InputWaitTimer < m_InputWaitDuration)
+            {
+                m_InputWaitTimer += Time.deltaTime;
+                return;
+            }
+
             for (int i = 0; i < m_Dialog.m_Choices.Length; ++i)
             {
                 bool isPressed = CrossPlatformInputManager.GetButtonDown(m_ChoiceButtons[i]);
                 if (isPressed)
                 {
+                    m_InputWaitTimer = 0f;
+
                     Choice choice = m_Dialog.m_Choices[i];
                     if (choice.m_Trigger && (choice.m_Trigger is ActionTrigger))
                     {
