@@ -74,18 +74,22 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\ActionTrigger.cs" />
     <Compile Include="Assets\Scripts\Camera\Camera2DFollow.cs" />
-    <Compile Include="Assets\Scripts\ChangeLevelOnInteract.cs" />
-    <Compile Include="Assets\Scripts\Dialog.cs" />
-    <Compile Include="Assets\Scripts\GameController.cs" />
-    <Compile Include="Assets\Scripts\Interactable.cs" />
-    <Compile Include="Assets\Scripts\Levels.cs" />
-    <Compile Include="Assets\Scripts\NarativeManager.cs" />
-    <Compile Include="Assets\Scripts\ShowDialogOnInteract.cs" />
-    <Compile Include="Assets\Scripts\ShowGameOver.cs" />
-    <Compile Include="Assets\Scripts\Tags.cs" />
-    <Compile Include="Assets\Scripts\UiManager.cs" />
+    <Compile Include="Assets\Scripts\Dialogs\ActionCondition.cs" />
+    <Compile Include="Assets\Scripts\Dialogs\ActionTrigger.cs" />
+    <Compile Include="Assets\Scripts\Dialogs\Conditions\ConditionAnd.cs" />
+    <Compile Include="Assets\Scripts\Dialogs\Conditions\ConditionNot.cs" />
+    <Compile Include="Assets\Scripts\Dialogs\Conditions\ConditionOr.cs" />
+    <Compile Include="Assets\Scripts\Dialogs\Dialog.cs" />
+    <Compile Include="Assets\Scripts\Dialogs\DialogTriggers.cs" />
+    <Compile Include="Assets\Scripts\Enums\Levels.cs" />
+    <Compile Include="Assets\Scripts\Enums\Tags.cs" />
+    <Compile Include="Assets\Scripts\Managers\GameController.cs" />
+    <Compile Include="Assets\Scripts\Managers\NarativeManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\UiManager.cs" />
+    <Compile Include="Assets\Scripts\Triggers\ChangeLevelOnInteract.cs" />
+    <Compile Include="Assets\Scripts\Triggers\ShowDialogOnInteract.cs" />
+    <Compile Include="Assets\Scripts\Triggers\ShowGameOver.cs" />
     <Compile Include="Assets\Scripts\UserScripts\PlatformerCharacter2D.cs" />
     <Compile Include="Assets\Scripts\UserScripts\UserControl.cs" />
     <Compile Include="Assets\Scripts\Util\KeepOnLevelChange.cs" />

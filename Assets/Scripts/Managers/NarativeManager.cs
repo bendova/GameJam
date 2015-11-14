@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityStandardAssets.CrossPlatformInput;
 
 namespace GameJam
@@ -8,6 +10,8 @@ namespace GameJam
     {
         public string[] m_ChoiceButtons;
 
+        private Dictionary<DialogTrigger, bool> m_TriggeredDialogs = new Dictionary<DialogTrigger,bool>();
+
         private Dialog m_Dialog = null;
 
         private float m_InputWaitDuration = 0.5f;
@@ -15,7 +19,7 @@ namespace GameJam
 
         void Start()
         {
-
+            
         }
 
         void FixedUpdate()
@@ -59,6 +63,7 @@ namespace GameJam
         public void TriggerDialog(Dialog dialog)
         {
             m_Dialog = dialog;
+            m_TriggeredDialogs[m_Dialog.m_DialogTrigger] = true;
             UiManager.Instance.ShowDialog(dialog);
             if (dialog.m_BlockPlayerInput)
             {
@@ -86,6 +91,11 @@ namespace GameJam
                 UiManager.Instance.ResetDialog();
                 GameController.PlayerCtrl.UnblockInput();
             }
+        }
+
+        public bool DoesPlayerHaveDialogTriggered(DialogTrigger trigger)
+        {
+            return (m_TriggeredDialogs.ContainsKey(trigger) && m_TriggeredDialogs[trigger]);
         }
     }
 }
