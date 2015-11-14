@@ -17,7 +17,7 @@ namespace GameJam
             }
             else if (m_Instances[gameObject.name] != this)
             {
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
         }
     }

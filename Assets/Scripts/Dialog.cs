@@ -6,6 +6,7 @@ namespace GameJam
     [System.Serializable]
     public class Choice
     {
+        [TextArea(2, 10)]
         public String m_ChoiceText;
         public Dialog m_NextDialog;
         public MonoBehaviour m_Trigger;
@@ -13,6 +14,7 @@ namespace GameJam
 
     public class Dialog : MonoBehaviour
     {
+        [TextArea(3, 10)]
         public String m_DialogText = "";
         public String m_RememberText = "";
         public String m_ActionText = "";

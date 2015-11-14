@@ -29,7 +29,7 @@ namespace GameJam
             ResetDialog();
 
             m_DialogText.text = dialog.m_DialogText;
-            m_ActionText.text = dialog.m_ActionText;
+            //m_ActionText.text = dialog.m_ActionText;
             //m_RememeberText.text = dialog.m_RemeberText;
             if (m_ChoiceTexts.Length >= dialog.m_Choices.Length)
             {
@@ -54,7 +54,7 @@ namespace GameJam
         {
             m_DialogText.text = "";
             //m_RememeberText.text = "";
-            m_ActionText.text = "";
+            //m_ActionText.text = "";
             for (int i = 0; i < m_ChoiceTexts.Length; ++i)
             {
                 m_ChoiceTexts[i].text = "";

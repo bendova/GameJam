@@ -8,9 +8,8 @@ namespace GameJam
     public class UserControl : MonoBehaviour
     {
         private PlatformerCharacter2D m_Character;
-        private bool m_Jump;
         private bool m_Interact;
-        private bool m_isInputBlocked = false;
+        private bool m_IsInputBlocked = false;
 
         private void Awake()
         {
@@ -19,23 +18,17 @@ namespace GameJam
 
         private void Update()
         {
-            if (!m_Jump)
-            {
-                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
-            }
             m_Interact = CrossPlatformInputManager.GetButton("Interact");
         }
         
         private void FixedUpdate()
         {
-            if (m_isInputBlocked == false)
+            if (m_IsInputBlocked == false)
             {
                 // Read the inputs.
-                bool crouch = Input.GetKey(KeyCode.LeftControl);
                 float h = CrossPlatformInputManager.GetAxis("Horizontal");
                 // Pass all parameters to the character control script.
-                m_Character.Move(h, crouch, m_Jump);
-                m_Jump = false;
+                m_Character.Move(h);
             }
         }
 
@@ -46,13 +39,13 @@ namespace GameJam
 
         public void BlockInput()
         {
-            m_isInputBlocked = true;
-            m_Character.Move(0, false, false);
+            m_IsInputBlocked = true;
+            m_Character.Move(0);
         }
 
         public void UnblockInput()
         {
-            m_isInputBlocked = false;
+            m_IsInputBlocked = false;
         }
     }
 }

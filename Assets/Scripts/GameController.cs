@@ -8,18 +8,32 @@ namespace GameJam
     {
         public static GameObject Player
         {
-            get { return Instance.m_Player; }
+            get
+            {
+                if (Instance.m_Player == null)
+                {
+                    Instance.GetPlayer();
+                }
+                return Instance.m_Player; 
+            }
         }
 
         public static UserControl PlayerCtrl
         {
-            get { return Instance.m_PlayerControl; }
+            get
+            {
+                if (Instance.m_PlayerControl == null)
+                {
+                    Instance.GetPlayer();
+                }
+                return Instance.m_PlayerControl;
+            }
         }
 
         private GameObject m_Player = null;
         private UserControl m_PlayerControl = null;
 
-        void Start()
+        private void GetPlayer()
         {
             m_Player = GameObject.FindGameObjectWithTag(Tags.Player);
             m_PlayerControl = m_Player.GetComponent<UserControl>();
