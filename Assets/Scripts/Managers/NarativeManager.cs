@@ -35,14 +35,25 @@ namespace GameJam
                 return;
             }
 
-            for (int i = 0; i < m_Dialog.m_Choices.Length; ++i)
+            int i = 0;
+            int choiceButtonIndex = 0;
+            for (; i < m_Dialog.m_Choices.Length; ++i)
             {
-                bool isPressed = CrossPlatformInputManager.GetButtonDown(m_ChoiceButtons[i]);
+                Choice choice = m_Dialog.m_Choices[i];
+                if (choice.m_Condition && (choice.m_Condition is ActionCondition))
+                {
+                    bool isValid = (choice.m_Condition as ActionCondition).IsTrue();
+                    if (isValid == false)
+                    {
+                        continue;
+                    }
+                }
+
+                bool isPressed = CrossPlatformInputManager.GetButtonDown(m_ChoiceButtons[choiceButtonIndex]);
                 if (isPressed)
                 {
                     m_InputWaitTimer = 0f;
 
-                    Choice choice = m_Dialog.m_Choices[i];
                     if (choice.m_Trigger && (choice.m_Trigger is ActionTrigger))
                     {
                         (choice.m_Trigger as ActionTrigger).Trigger();
@@ -57,6 +68,8 @@ namespace GameJam
                         CloseDialog();
                     }
                 }
+
+                ++choiceButtonIndex;
             }
         }
 
@@ -65,7 +78,7 @@ namespace GameJam
             m_Dialog = dialog;
             m_TriggeredDialogs[m_Dialog.m_DialogTrigger] = true;
             UiManager.Instance.ShowDialog(dialog);
-            if (dialog.m_BlockPlayerInput)
+            if ((m_Dialog.m_Choices.Length > 0) && dialog.m_BlockPlayerInput)
             {
                 GameController.PlayerCtrl.BlockInput();
             }
@@ -73,15 +86,6 @@ namespace GameJam
             {
                 GameController.PlayerCtrl.UnblockInput();
             }
-
-            if (m_Dialog.m_Choices.Length > m_ChoiceButtons.Length)
-            {
-                Debug.LogError("NarativeManager::TriggerDialog() Trying to show a dialog with more buttons " +
-                                "than there are actions available.");
-            }
-
-            // TODO if the dialog doesn't have any options then
-            // automatically clear it after a while.
         }
 
         public void CloseDialog()

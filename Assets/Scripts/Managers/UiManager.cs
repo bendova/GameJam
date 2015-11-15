@@ -31,35 +31,24 @@ namespace GameJam
                 m_DialogText.text = dialog.m_DialogText;
                 //m_ActionText.text = dialog.m_ActionText;
                 //m_RememeberText.text = dialog.m_RemeberText;
-                if (m_ChoiceTexts.Length >= dialog.m_Choices.Length)
+                int i = 0;
+                int optionIndex = 0;
+                for (; i < dialog.m_Choices.Length; ++i)
                 {
-                    int i = 0;
-                    for (int optionIndex = 0; i < dialog.m_Choices.Length; ++i)
+                    bool isValid = true;
+                    if (dialog.m_Choices[i].m_Condition && (dialog.m_Choices[i].m_Condition is ActionCondition))
                     {
-                        bool isValid = true;
-                        if (dialog.m_Choices[i].m_Condition && (dialog.m_Choices[i].m_Condition is ActionCondition))
-                        {
-                            isValid = (dialog.m_Choices[i].m_Condition as ActionCondition).IsTrue();
-                        }
-                        if (isValid)
-                        {
-                            m_ChoiceTexts[optionIndex].text = (optionIndex + 1) + ". " + dialog.m_Choices[i].m_ChoiceText;
-                            ++optionIndex;
-                        }
-                        else
-                        {
-                            m_ChoiceTexts[i].text = "";
-                        }
+                        isValid = (dialog.m_Choices[i].m_Condition as ActionCondition).IsTrue();
                     }
-                    for (; i < m_ChoiceTexts.Length; ++i)
+                    if (isValid)
                     {
-                        m_ChoiceTexts[i].text = "";
+                        m_ChoiceTexts[optionIndex].text = (optionIndex + 1) + ". " + dialog.m_Choices[i].m_ChoiceText;
+                        ++optionIndex;
                     }
                 }
-                else
+                for (; i < m_ChoiceTexts.Length; ++i)
                 {
-                    Debug.LogWarning("UiManager::ShowDialog() Trying to show too many choices in the dialog window. " +
-                                     "The dialog in question is: '" + dialog.m_DialogText + "'");
+                    m_ChoiceTexts[i].text = "";
                 }
             }
             else
