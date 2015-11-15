@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Levels : MonoBehaviour
+public enum Levels
 {
-    public static string Level_01 = "Level_01";
-    public static string Level_02 = "Level_02";
+    Level_None = 0,
+    Level_WhiteRoom,
+    Level_ThroneRoom,
+    Level_Village,
+    Level_Lake,
+    Level_DragonLair,
 }

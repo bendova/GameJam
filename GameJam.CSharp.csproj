@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\Triggers\ChangeLevelOnInteract.cs" />
     <Compile Include="Assets\Scripts\Triggers\ShowDialogOnInteract.cs" />
     <Compile Include="Assets\Scripts\Triggers\ShowGameOver.cs" />
+    <Compile Include="Assets\Scripts\UI\ScreenFader.cs" />
     <Compile Include="Assets\Scripts\UserScripts\PlatformerCharacter2D.cs" />
     <Compile Include="Assets\Scripts\UserScripts\UserControl.cs" />
     <Compile Include="Assets\Scripts\Util\KeepOnLevelChange.cs" />

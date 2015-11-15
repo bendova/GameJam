@@ -1,11 +1,22 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace GameJam
 {
     public class ChangeLevelOnInteract : MonoBehaviour, ActionTrigger
     {
-        public string m_LevelToLoad = "";
+        public Levels m_LevelToLoad = Levels.Level_None;
         public bool m_ChangeLevelOnInteract = true;
+
+        public static Dictionary<Levels, string> s_LevelsMap = new Dictionary<Levels, string>()
+        {
+            {Levels.Level_None,         "" },
+            {Levels.Level_WhiteRoom,    "Level_01" },
+            {Levels.Level_ThroneRoom,   "Level_02" }, //FIXME
+            {Levels.Level_Village,      "Level_03" },
+            {Levels.Level_Lake,         "Level_04" },
+            {Levels.Level_DragonLair,   "Level_05" },
+        };
 
         void OnTriggerStay2D(Collider2D other)
         {
@@ -30,7 +41,7 @@ namespace GameJam
 
         private void ChangeLevel()
         {
-            GameController.Instance.ChangeLevel(m_LevelToLoad);
+            GameController.Instance.ChangeLevel(s_LevelsMap[m_LevelToLoad]);
         }
     }
 }

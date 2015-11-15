@@ -7,6 +7,7 @@ namespace GameJam
 {
     public class ShowGameOver : MonoBehaviour, ActionTrigger
     {
+        [TextArea(3, 10)]
         public string m_GameOverMessage = "";
 
         private bool m_ShowGameOver = false;
@@ -23,7 +24,7 @@ namespace GameJam
             {
                 if (CrossPlatformInputManager.GetButton("Restart"))
                 {
-                    Application.LoadLevel(Levels.Level_01);
+                    Application.LoadLevel(ChangeLevelOnInteract.s_LevelsMap[Levels.Level_WhiteRoom]);
                     UiManager.Instance.m_GameOverArea.SetActive(false);
                 }
             }

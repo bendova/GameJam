@@ -7,23 +7,21 @@ namespace GameJam
 {
     public class UiManager : Singleton<UiManager>
     {
+        [Header("DialogUi")]
         public Text m_DialogText;
         public Text m_RememeberText;
         public Text m_ActionText;
         public Text[] m_ChoiceTexts;
+
+        [Header("GameOverUi")]
         public GameObject m_GameOverArea;
         public Text m_GameOverText;
-
+        
         void Start()
         {
             ResetDialog();
         }
-
-        void Update()
-        {
-
-        }
-
+        
         public void ShowDialog(Dialog dialog)
         {
             ResetDialog();

@@ -32,6 +32,7 @@ namespace GameJam
 
         private GameObject m_Player = null;
         private UserControl m_PlayerControl = null;
+        private string m_LevelToLoad = null;
 
         private void GetPlayer()
         {
@@ -41,16 +42,20 @@ namespace GameJam
 
         public void ChangeLevel(String level)
         {
-            Application.LoadLevel(level);
+            m_LevelToLoad = level;
+            ScreenFader screenFader = (GameObject.FindGameObjectWithTag(Tags.ScreenFader).GetComponent<ScreenFader>());
+            if (screenFader)
+            {
+                screenFader.StartScreenFadeToBlack();
+            }
         }
 
-        public new void OnDestroy()
+        public void OnScreenFadeDone()
         {
-            // FIXME This function should not be called if our 
-            // gameObject is marked as DontDestroyOnLoad()
-            // when changing levels, but it is. 
-            // To be investigated.
-            //base.OnDestroy();
+            if (m_LevelToLoad != null)
+            {
+                Application.LoadLevel(m_LevelToLoad);
+            }
         }
     }
 }
