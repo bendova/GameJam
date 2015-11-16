@@ -1,0 +1,114 @@
+Initialize engine version: 5.2.2f1 (3757309da7e7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics 4000 (ID=0x166)
+    Vendor:   Intel
+    VRAM:     128 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Public\Documents\Unity Projects\GameJam\StoryOfTwoAxes_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\GameJam\StoryOfTwoAxes_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\GameJam\StoryOfTwoAxes_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\GameJam\StoryOfTwoAxes_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\GameJam\StoryOfTwoAxes_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\GameJam\StoryOfTwoAxes_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\GameJam\StoryOfTwoAxes_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\GameJam\StoryOfTwoAxes_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\GameJam\StoryOfTwoAxes_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\GameJam\StoryOfTwoAxes_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\GameJam\StoryOfTwoAxes_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.067 seconds
+<RI> Initializing input.
+<RI> Input initialized.
+desktop: 1920x1080 60Hz; virtual: 3840x1080 at -1920,0
+<RI> Initialized touch support.
+Platform assembly: C:\Users\Public\Documents\Unity Projects\GameJam\StoryOfTwoAxes_Data\Managed\System.dll (this message is harmless)
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 3a68 -> priority: 1 
+  Thread -> id: 20c -> priority: 1 
+[Singleton] Using instance already created: Managers
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+[Singleton] Using instance already created: Managers
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+[Singleton] Using instance already created: UiManager
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.732586 ms
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 382.
+Total: 0.305331 ms (FindLiveObjects: 0.023519 ms CreateObjectMapping: 0.015822 ms MarkObjects: 0.252732 ms  DeleteObjects: 0.012401 ms)
+
+[Singleton] Using instance already created: Managers
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+[Singleton] Using instance already created: Managers
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+[Singleton] Using instance already created: UiManager
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.580728 ms
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 807.
+Total: 0.490924 ms (FindLiveObjects: 0.058158 ms CreateObjectMapping: 0.024802 ms MarkObjects: 0.392996 ms  DeleteObjects: 0.013684 ms)
+
+[Singleton] Using instance already created: Managers
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.640169 ms
+
+Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 473.
+Total: 0.405825 ms (FindLiveObjects: 0.051316 ms CreateObjectMapping: 0.041908 ms MarkObjects: 0.292929 ms  DeleteObjects: 0.018815 ms)
+
+[Singleton] Using instance already created: Managers
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+[Singleton] Using instance already created: Managers
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+[Singleton] Using instance already created: UiManager
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.018436 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 807.
+Total: 0.499477 ms (FindLiveObjects: 0.100921 ms CreateObjectMapping: 0.016677 ms MarkObjects: 0.365627 ms  DeleteObjects: 0.015394 ms)
+
+[Singleton] Using instance already created: Managers
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.652570 ms
+
+Unloading 27 unused Assets to reduce memory usage. Loaded Objects now: 559.
+Total: 0.348949 ms (FindLiveObjects: 0.024802 ms CreateObjectMapping: 0.017105 ms MarkObjects: 0.288653 ms  DeleteObjects: 0.017960 ms)
+
+[Singleton] Using instance already created: Managers
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+[Singleton] Using instance already created: Managers
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+[Singleton] Using instance already created: UiManager
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+

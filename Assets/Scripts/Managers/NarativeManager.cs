@@ -10,7 +10,8 @@ namespace GameJam
     {
         public string[] m_ChoiceButtons;
 
-        private Dictionary<DialogTrigger, bool> m_TriggeredDialogs = new Dictionary<DialogTrigger,bool>();
+        private static List<DialogTrigger> m_TriggeredDialogs = new List<DialogTrigger>() { DialogTrigger.None, DialogTrigger.None, DialogTrigger.None };
+        private static int m_nextTriggerDialogIndex = 0;
 
         private Dialog m_Dialog = null;
 
@@ -19,7 +20,6 @@ namespace GameJam
 
         void Start()
         {
-            
         }
 
         void FixedUpdate()
@@ -76,7 +76,12 @@ namespace GameJam
         public void TriggerDialog(Dialog dialog)
         {
             m_Dialog = dialog;
-            m_TriggeredDialogs[m_Dialog.m_DialogTrigger] = true;
+            if ((dialog.m_DialogTrigger != DialogTrigger.None) && 
+                (m_TriggeredDialogs.Contains(dialog.m_DialogTrigger) == false))
+            {
+                m_TriggeredDialogs[m_nextTriggerDialogIndex] = dialog.m_DialogTrigger;
+                ++m_nextTriggerDialogIndex;
+            }
             UiManager.Instance.ShowDialog(dialog);
             if ((m_Dialog.m_Choices.Length > 0) && dialog.m_BlockPlayerInput)
             {
@@ -99,7 +104,12 @@ namespace GameJam
 
         public bool DoesPlayerHaveDialogTriggered(DialogTrigger trigger)
         {
-            return (m_TriggeredDialogs.ContainsKey(trigger) && m_TriggeredDialogs[trigger]);
+            return m_TriggeredDialogs.Contains(trigger);
+        }
+
+        public bool DoesPlayerHaveDialogTriggered(DialogTrigger trigger, int index)
+        {
+            return (m_TriggeredDialogs[index] == trigger);
         }
     }
 }

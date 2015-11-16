@@ -80,6 +80,8 @@
     <Compile Include="Assets\Scripts\Dialogs\Conditions\ConditionAnd.cs" />
     <Compile Include="Assets\Scripts\Dialogs\Conditions\ConditionNot.cs" />
     <Compile Include="Assets\Scripts\Dialogs\Conditions\ConditionOr.cs" />
+    <Compile Include="Assets\Scripts\Dialogs\Conditions\HasTriggersInOrder.cs" />
+    <Compile Include="Assets\Scripts\Dialogs\Conditions\IsFirst.cs" />
     <Compile Include="Assets\Scripts\Dialogs\Dialog.cs" />
     <Compile Include="Assets\Scripts\Dialogs\DialogTriggers.cs" />
     <Compile Include="Assets\Scripts\Enums\Levels.cs" />
